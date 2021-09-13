@@ -1,0 +1,102 @@
+.wrapper {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #DAD1E3;
+
+  @keyframes blink {
+    0% {
+      opacity: 0;
+    }
+
+    50% {
+      opacity: 1;
+    }
+
+    100% {
+      opacity: 0;
+    }
+  }
+
+  .intro-footer {
+    transform: translateY(280px);
+
+    h1 {
+      font-family: sans-serif;
+      font-size: 16px;
+      font-weight: normal;
+      text-transform: uppercase;
+      color: #000;
+
+      span {
+        font-weight: bold;
+      }
+    }
+
+    p {
+      font-family: sans-serif;
+      font-size: 14px;
+      color: #000;
+      text-align: center;
+      opacity: 1;
+      animation: blink 2s ease 1s infinite forwards;
+    }
+  }
+}
+
+.logo {
+  width: 320px;
+  height: auto;
+
+  .cls-1 {
+    fill: #DA111B;
+  }
+
+  @keyframes icon {
+    from {
+      transform: rotate(-180deg);
+    }
+
+    to {
+      transform: rotate(0deg);
+    }
+  }
+
+  #icon {
+    transform: rotate(-360deg);
+    animation: icon 2s ease;
+  }
+}
+
+.concepts {
+  min-height: 100vh;
+  padding: 120px;
+
+  .concept {
+    margin-bottom: 80px
+  }
+
+  h2 {
+    margin-bottom: 8px;
+    font-family: sans-serif;
+    font-size: 28px;
+    font-weight: normal;
+  }
+
+  h3 {
+    margin: 24px 0;
+    font-family: sans-serif;
+    font-size: 18px;
+    font-weight: normal;
+    text-transform: uppercase;
+  }
+
+  .deliverable {
+    margin-bottom: 8px;
+    font-family: sans-serif;
+    font-size: 16px;
+    font-weight: normal;
+  }
+}
