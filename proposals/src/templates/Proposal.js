@@ -12,7 +12,7 @@ import EyeIcon from "../assets/svg/platonico_eye_icon.svg"
 
 const ProposalPage = ({ data: { proposal } }) => {
   const
-    { prospect, date, _rawConcepts, terms } = proposal,
+    { prospect, _rawConcepts, terms } = proposal,
     { name, company } = prospect,
     [step, setStep] = useState(1),
     total = _rawConcepts.map(concept => Number(concept.price)).reduce((a, b) => (a + b));
@@ -38,7 +38,7 @@ const ProposalPage = ({ data: { proposal } }) => {
           </div>
 
           <div className="concepts">
-            <Header company={company} date={date}/>
+            <Header company={company}/>
 
             {_rawConcepts?.map(concept => {
               const { title, deliverables, price, notes, time } = concept
@@ -89,7 +89,6 @@ const ProposalPage = ({ data: { proposal } }) => {
 
       {step === 2 &&
         <TermsPage
-        date={date}
           terms={terms}
           company={company}
           changePage={changePage}

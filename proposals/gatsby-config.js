@@ -53,9 +53,13 @@ module.exports = {
       }
     },
     {
-      resolve: `gatsby-plugin-scroll-reveal`,
+      resolve: `gatsby-plugin-google-fonts`,
       options: {
-        threshold: 1
+        fonts: [
+          `Roboto\:100,300,400`,
+          `Roboto Mono\:200,400`,
+        ],
+        display: 'swap'
       }
     }
   ],
