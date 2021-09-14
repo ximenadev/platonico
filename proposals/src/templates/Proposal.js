@@ -1,5 +1,6 @@
 import React, { useState } from "react"
 import { graphql } from 'gatsby'
+import { formatPrice } from "../lib/helpers"
 
 import Seo from "../components/seo"
 
@@ -11,7 +12,8 @@ const ProposalPage = ({ data: { proposal } }) => {
   const
     { prospect, date, version, _rawConcepts, terms } = proposal,
     { name, company } = prospect,
-    [step, setStep] = useState(1);
+    [step, setStep] = useState(1),
+    total = _rawConcepts.map(concept => Number(concept.price)).reduce((a, b) => (a + b));
 
   const changePage = step => {
     setStep(step)
@@ -35,42 +37,47 @@ const ProposalPage = ({ data: { proposal } }) => {
 
           <div className="concepts">
             <Header company={company} date={date}/>
+
             {_rawConcepts?.map(concept => {
-              const { title, deliverables, price } = concept
+              const { title, deliverables, price, notes, time } = concept
+
               return (
                 <div className="concept">
                   <h2>{title}</h2>
                   <hr />
 
-                  <section>
-                    <h3>Entregables:</h3>
-                    {deliverables?.map(deliverable => (
-                      <p className="deliverable">- {deliverable}</p>
-                    ))}
-                  </section>
+                  <div className="container">
+                    <section>
+                      <h3>Entregables:</h3>
+                      {deliverables?.map(deliverable => (
+                        <p className="deliverable">- {deliverable}</p>
+                      ))}
+                    </section>
 
-                  <aside>
-                    <h2>${price} mxn</h2>
-                  </aside>
+                    <aside>
+                      <h3>{formatPrice(price)}</h3>
+                      <p>Tiempo de entrega: {time}</p>
+                    </aside>
+                  </div>
+
+                  <div className="notes">
+                    {notes?.map(note => (
+                      <p>* {note}</p>
+                    ))}
+                  </div>
+
                 </div>
               )
             })}
+
+            <div className="total">
+              <p>Total: {formatPrice(total)}</p>
+            </div>
+
           </div>
+
         </main>
       }
-
-      {/* {step === 2 &&
-        <Services
-          date={date}
-          company={company}
-          language={language}
-          services={services}
-          isLatente={isLatente}
-          commons={proposalPage}
-          changePage={changePage}
-          paymentMethod={paymentMethod}
-        />
-      } */}
 
       {/* {step === 3 &&
         <Terms

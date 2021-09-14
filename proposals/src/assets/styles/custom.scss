@@ -17,6 +17,7 @@ header {
     margin: 0;
     font-family: sans-serif;
     font-size: 16px;
+    text-transform: uppercase;
   }
 }
 
@@ -96,13 +97,17 @@ header {
 
 .concepts {
   min-height: 100vh;
-  padding: 40px 120px 120px;
+  padding: 40px 168px 120px;
   position: sticky;
   top: 0;
   background-color: #fff;
 
   .concept {
-    margin-bottom: 80px
+    margin-bottom: 80px;
+  }
+
+  .container {
+    display: flex;
   }
 
   h2 {
@@ -125,5 +130,29 @@ header {
     font-family: sans-serif;
     font-size: 16px;
     font-weight: normal;
+  }
+
+  section {
+    width: 70%;
+  }
+
+  aside {
+    width: 30%;
+    font-family: sans-serif;
+    font-size: 14px;
+
+    h3 {
+      font-size: 24px;
+    }
+  }
+
+  .notes {
+    margin-top: 16px;
+    font-family: sans-serif;
+    font-size: 12px;
+
+    p {
+      margin-bottom: 0;
+    }
   }
 }
