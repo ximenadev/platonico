@@ -24,7 +24,7 @@ const ProposalPage = ({ data: { proposal } }) => {
 
   return(
     <main>
-      <Seo title={`${company || name }`} />
+      <Seo title={`Propuesta ${company || name }`} />
 
       {step === 1 &&
         <main>
@@ -77,7 +77,7 @@ const ProposalPage = ({ data: { proposal } }) => {
 
               <button className="icon" onClick={() => changePage(2)}>
                 <EyeIcon/>
-                <p>See our terms</p>
+                <p>Ve nuestros términos</p>
               </button>
 
             </div>
@@ -89,9 +89,10 @@ const ProposalPage = ({ data: { proposal } }) => {
 
       {step === 2 &&
         <TermsPage
+        date={date}
           terms={terms}
           company={company}
-          date={date}
+          changePage={changePage}
         />
       }
 

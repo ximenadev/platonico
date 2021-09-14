@@ -1,15 +1,31 @@
 import React from "react";
+
 import Header from "./header";
 
-const TermsPage = ({ terms, company, date }) => (
+import EyeIcon from "../assets/svg/platonico_eye_icon.svg"
+import Icon from "../assets/svg/platonico_icon.svg"
+
+const TermsPage = ({ terms, company, date, changePage }) => (
   <div className="terms-container">
     <Header company={company} date={date}/>
 
-    <h1>Términos y condiciones</h1>
+    <h1>Términos y Condiciones</h1>
     <hr />
     {terms?.map(term => (
       <p>- {term}</p>
     ))}
+    <div className="button-container">
+      <button  className="back" onClick={() => changePage(1)}>
+        <EyeIcon/>
+        <p>Ve la propuesta</p>
+      </button>
+      <button className="contact">
+      <a href="mailto:info.platonico@gmail.com">
+        <Icon/>
+        <p>Contáctanos</p>
+      </a>
+      </button>
+    </div>
   </div>
 )
 
