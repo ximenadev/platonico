@@ -8,10 +8,10 @@ export default {
         description: `Every time a change is made and published, the site needs to be deployed. Your free plan includes 300 mins of deployment (2 min per deploy). The billing period starts on the 11th of every month.`,
         sites: [
           {
-            title: 'Proposals',
-            apiId: '0aa894bc-6094-4bf4-bc00-45252bea6f96',
-            buildHookId: '601c3a94b58ba3952da405fd',
-            name: 'proposals'
+            title: 'Proposals Platonico',
+            apiId: '1583fc34-8c57-4812-9c7b-4a4ec3115fa0',
+            buildHookId: '613ffcf68bb45e0090d5dc10',
+            name: 'platonico-proposals'
           }
         ]
       }
