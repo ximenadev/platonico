@@ -46,7 +46,7 @@ header {
   }
 
   .intro-footer {
-    transform: translateY(280px);
+    transform: translateY(240px);
 
     h1 {
       font-family: sans-serif;
@@ -140,6 +140,7 @@ header {
     width: 30%;
     font-family: sans-serif;
     font-size: 14px;
+    text-align: right;
 
     h3 {
       font-size: 24px;
@@ -155,4 +156,38 @@ header {
       margin-bottom: 0;
     }
   }
+}
+
+.total {
+  margin-top: 148px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .icon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+
+    svg {
+      width: 80px;
+    }
+
+    #Layer_2 .cls-1 {
+      transition: transform ease 1s;
+    }
+
+    &:hover {
+      #Layer_2 .cls-1 {
+        transform: translateY(27px);
+      }
+    }
+  }
+}
+
+.terms-container {
+  padding: 40px 168px 120px;
 }

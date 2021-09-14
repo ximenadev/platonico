@@ -3,14 +3,16 @@ import { graphql } from 'gatsby'
 import { formatPrice } from "../lib/helpers"
 
 import Seo from "../components/seo"
+import Header from "../components/header"
+import TermsPage from "../components/terms"
 
 import Logo from "../assets/svg/platonico_logo.svg"
-import Header from "../components/header"
+import EyeIcon from "../assets/svg/platonico_eye_icon.svg"
 
 
 const ProposalPage = ({ data: { proposal } }) => {
   const
-    { prospect, date, version, _rawConcepts, terms } = proposal,
+    { prospect, date, _rawConcepts, terms } = proposal,
     { name, company } = prospect,
     [step, setStep] = useState(1),
     total = _rawConcepts.map(concept => Number(concept.price)).reduce((a, b) => (a + b));
@@ -71,7 +73,13 @@ const ProposalPage = ({ data: { proposal } }) => {
             })}
 
             <div className="total">
-              <p>Total: {formatPrice(total)}</p>
+              <h2>Total= <span>{formatPrice(total)}</span></h2>
+
+              <button className="icon" onClick={() => changePage(2)}>
+                <EyeIcon/>
+                <p>See our terms</p>
+              </button>
+
             </div>
 
           </div>
@@ -79,20 +87,14 @@ const ProposalPage = ({ data: { proposal } }) => {
         </main>
       }
 
-      {/* {step === 3 &&
-        <Terms
-          date={date}
+      {step === 2 &&
+        <TermsPage
+          terms={terms}
           company={company}
-          commons={notesPage}
-          notes={notes.notes}
-          language={language}
-          services={services}
-          isLatente={isLatente}
-          changePage={changePage}
-          paymentMethod={paymentMethod}
-          servicesNotes={servicesNotes}
+          date={date}
         />
-      } */}
+      }
+
     </main>
   )
 }

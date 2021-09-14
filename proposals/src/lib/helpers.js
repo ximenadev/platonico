@@ -4,5 +4,5 @@ export function formatPrice(price) {
     currency: 'USD'
   }).format
 
-  return `$${formatted(price)} mxn`
+  return `$${formatted(price)} MXN`
 }
