@@ -6,7 +6,7 @@ require('dotenv').config({
 
 module.exports = {
   siteMetadata: {
-    title: `Plat❋nico`,
+    title: `Plat✺nico`,
     description: `A web tool to optimize making proposals for possible clients.`,
     author: `@ximenadev`,
     siteUrl: `https://proposals.platoni.co/`,

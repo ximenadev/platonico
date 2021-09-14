@@ -4,6 +4,7 @@ import { graphql } from 'gatsby'
 import Seo from "../components/seo"
 
 import Logo from "../assets/svg/platonico_logo.svg"
+import Header from "../components/header"
 
 
 const ProposalPage = ({ data: { proposal } }) => {
@@ -18,11 +19,11 @@ const ProposalPage = ({ data: { proposal } }) => {
   }
 
   return(
-    <>
+    <main>
       <Seo title={`${company || name }`} />
 
       {step === 1 &&
-        <>
+        <main>
           <div className="wrapper">
             <Logo className="logo" />
 
@@ -33,22 +34,29 @@ const ProposalPage = ({ data: { proposal } }) => {
           </div>
 
           <div className="concepts">
+            <Header company={company} date={date}/>
             {_rawConcepts?.map(concept => {
-              const { title, deliverables } = concept
+              const { title, deliverables, price } = concept
               return (
                 <div className="concept">
                   <h2>{title}</h2>
                   <hr />
 
-                  <h3>Entregables:</h3>
-                  {deliverables?.map(deliverable => (
-                    <p className="deliverable">- {deliverable}</p>
-                  ))}
+                  <section>
+                    <h3>Entregables:</h3>
+                    {deliverables?.map(deliverable => (
+                      <p className="deliverable">- {deliverable}</p>
+                    ))}
+                  </section>
+
+                  <aside>
+                    <h2>${price} mxn</h2>
+                  </aside>
                 </div>
               )
             })}
           </div>
-        </>
+        </main>
       }
 
       {/* {step === 2 &&
@@ -78,7 +86,7 @@ const ProposalPage = ({ data: { proposal } }) => {
           servicesNotes={servicesNotes}
         />
       } */}
-    </>
+    </main>
   )
 }
 
