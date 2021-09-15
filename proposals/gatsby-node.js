@@ -7,6 +7,10 @@ exports.createPages = async ({ graphql, actions }) => {
           nodes {
             _id
             version
+            prospect {
+              name
+              company
+            }
           }
         }
       }
@@ -19,7 +23,7 @@ exports.createPages = async ({ graphql, actions }) => {
   const proposals = result.data.proposals || []
 
   proposals.nodes.forEach(proposal => {
-    const path = `proposal/${proposal._id}/v${proposal.version}`
+    const path = `${proposal.prospect.company}/v${proposal.version}`
 
     createPage({
       path,

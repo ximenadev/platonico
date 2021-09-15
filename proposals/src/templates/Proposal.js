@@ -12,6 +12,7 @@ import EyeIcon from "../assets/svg/platonico_eye_icon.svg"
 import "../assets/styles/custom.scss"
 import "../assets/styles/media.scss"
 
+//TODO: Live Preview
 
 const ProposalPage = ({ data: { proposal } }) => {
   const
