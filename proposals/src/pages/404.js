@@ -3,6 +3,10 @@ import Header from "../components/header"
 
 import Seo from "../components/seo"
 
+import "../assets/styles/custom.scss"
+
+//TODO: Design and implement
+
 const NotFoundPage = () => (
   <>
     <Seo title="404: Not found" />

@@ -146,6 +146,8 @@ header {
 
   .deliverable {
     margin-bottom: 8px;
+    margin-left: 24px;
+    line-height: 1.5;
     font-family: 'Roboto Mono', sans-serif;
     font-size: 16px;
     font-weight: 400;
@@ -280,5 +282,13 @@ header {
         transform: translateX(-40px) rotate(10deg) translateY(-60px);
       }
     }
+  }
+
+  li {
+    max-width: 75%;
+    margin-bottom: 16px;
+    margin-left: 24px;
+    line-height: 1.5;
+    font-weight: 300;
   }
 }

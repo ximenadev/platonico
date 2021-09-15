@@ -1,0 +1,76 @@
+@media screen and (max-width: 1024px) {
+  .concepts {
+    padding: 40px 40px 120px;
+
+    .container {
+      flex-direction: column;
+    }
+
+    aside,
+    section {
+      width: 100%;
+      text-align: left;
+    }
+  }
+
+  .terms-container {
+    padding: 40px 40px 120px;
+
+    .button-container {
+      width: 90%;
+    }
+
+    li {
+      max-width: 100%;
+    }
+  }
+}
+
+@media screen and (max-width: 540px) {
+  .logo {
+    width: 240px;
+  }
+
+  .wrapper .intro-footer {
+    transform: translateY(120px);
+  }
+
+  header {
+    margin-bottom: 56px;
+
+    .logo-header {
+      width: 120px;
+    }
+  }
+
+  .concepts {
+    h2 {
+      font-size: 32px;
+    }
+
+    h3 {
+      margin-top: 40px;
+      font-size: 16px;
+    }
+
+    .deliverable {
+      font-size: 14px;
+    }
+
+    .concept {
+      margin-bottom: 88px;
+    }
+  }
+
+  .total {
+    flex-direction: column;
+
+    h2 {
+      margin-bottom: 56px;
+    }
+  }
+
+  .terms-container li {
+    font-size: 12px;
+  }
+}

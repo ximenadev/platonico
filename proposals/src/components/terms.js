@@ -11,9 +11,11 @@ const TermsPage = ({ terms, company, date, changePage }) => (
 
     <h1>Términos y Condiciones</h1>
     <hr />
-    {terms?.map(term => (
-      <p>- {term}</p>
-    ))}
+    <ul>
+      {terms?.map(term => (
+        <li>{term}</li>
+      ))}
+    </ul>
     <div className="button-container">
       <button  className="back" onClick={() => changePage(1)}>
         <EyeIcon/>

@@ -9,6 +9,9 @@ import TermsPage from "../components/terms"
 import Logo from "../assets/svg/platonico_logo.svg"
 import EyeIcon from "../assets/svg/platonico_eye_icon.svg"
 
+import "../assets/styles/custom.scss"
+import "../assets/styles/media.scss"
+
 
 const ProposalPage = ({ data: { proposal } }) => {
   const
@@ -41,7 +44,7 @@ const ProposalPage = ({ data: { proposal } }) => {
             <Header company={company}/>
 
             {_rawConcepts?.map(concept => {
-              const { title, deliverables, price, notes, time } = concept
+              const { title, deliverables, price, notes, time, hours } = concept
 
               return (
                 <div className="concept">
@@ -51,13 +54,16 @@ const ProposalPage = ({ data: { proposal } }) => {
                   <div className="container">
                     <section>
                       <h3>Entregables:</h3>
-                      {deliverables?.map(deliverable => (
-                        <p className="deliverable">- {deliverable}</p>
-                      ))}
+                      <ul>
+                        {deliverables?.map(deliverable => (
+                          <li className="deliverable"> {deliverable}</li>
+                        ))}
+                      </ul>
                     </section>
 
                     <aside>
                       <h3>{formatPrice(price)}</h3>
+                      <p>Horas totales: {hours}</p>
                       <p>Tiempo de entrega: {time}</p>
                     </aside>
                   </div>
