@@ -14,6 +14,11 @@ export default {
       type: "string"
     },
     {
+      name: "hours",
+      title: "Hours",
+      type: "string"
+    },
+    {
       name: "deliverables",
       title: "Deliverables",
       type: "array",
